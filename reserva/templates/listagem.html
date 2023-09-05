@@ -1,1 +1,113 @@
 {% extends 'base.html' %}
+
+{% block style %}
+<style>
+
+    .inicio1{
+        display: grid;
+        justify-content: center;
+        align-items: center; 
+    }
+    .inicio2{
+        width: 900px;     
+    }
+
+</style>
+{% endblock %}
+
+{% block main %}
+
+<!-- ======= Seção Inicial ======= -->
+  <section id="hero" class="hero">
+    <div class="inicio1">
+        <div class="inicio2">
+            <h2>Bem vindo ao cadastro de reservas!</h2>
+            <br>
+            <br>
+        </div>
+    </div>  
+  </section>
+
+  <!-- ======= Seção de Emoções ======= -->
+  <section id="portfolio" class="portfolio sections-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>Reservas cadastradas</h2>
+      </div>
+
+      <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 portfolio-container">
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Raiva</a></h4>
+                <p>Descubra o que está por trás da raiva que sentimos</p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+            <div class="portfolio-wrap">
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Alegria</a></h4>
+                <p>Aprenda sobre o melhor dos sentimentos!</p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+            <div class="portfolio-wrap">
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Medo</a></h4>
+                <p>Porque sentimos medo?</p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-varios">
+            <div class="portfolio-wrap">
+              <a href="" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Outros sentimentos</a></h4>
+                <p>você sabia que os nossos sentimentos são experiências complexas e subjetivas que envolvem uma combinação de processos cognitivos, emocionais e fisiológicos?
+                  pois é! temos muitos outros. Descubra aqui.
+                </p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+            <div class="portfolio-wrap">
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Nojo</a></h4>
+                <p>Você sente nojo de algo?</p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="" title="More Details">Tristeza</a></h4>
+                <p>infelizmente esse é um sentimento presente em todos nós... descubra mais!</p>
+              </div>
+            </div>
+          </div><!-- End Item -->
+
+          
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Section -->
+
+{% endblock %}

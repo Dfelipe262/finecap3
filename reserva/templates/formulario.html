@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div style="width: 700px; display: grid; justify-content: center; align-items: center; margin-top: 50px; margin-bottom: 50px;">
+    <h2 style="margin-top: 50px;"> Cadastrar Reserva </h2>
+       
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="cnpj" class="form-label">Cnpj</label>
+            {{ form.cnpj }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="nome_empresa" class="form-label">Nome da empresa</label>
+            {{ form.nome_empresa }}
+        </div>
+
+        <div class="mb-3">
+            <label for="categoria_empresa" class="form-label">Categoria da empresa</label>
+            {{ form.categoria_empresa}}
+        </div>
+        
+        <div class="mb-3">
+            <label for="quitado" class="form-label">Quitado</label>
+            {{ form.quitado }}
+        </div>
+
+        <div class="mb-3">
+            <label for="imagem" class="form-label">imagem</label>
+            {{ form.imagem }}
+        </div>
+
+        <div class="mb-3">
+            <label for="stand" class="form-label">Stand</label>
+            {{ form.stand }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>  
+</div>
+      
+{% endblock %}
+   

@@ -15,7 +15,7 @@ class Reserva(models.Model):
     nome_empresa = models.CharField(max_length=100)
     categoria_empresa = models.CharField(max_length=100)
     quitado = models.BooleanField(default=False)
-    imagem =models.ImageField(default=False, required=False)
+    imagem =models.ImageField(default=False)
     stand = models.ForeignKey(Stand, on_delete=models.CASCADE)
    
 

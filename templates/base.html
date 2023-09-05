@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Monemotions</title>
+  <title>ReservaStand</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -55,19 +55,16 @@
   <!-- ======= Cabeçalho ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center">
-        <h1>Monemotions</h1>
+      <a href="{% url 'listagem' %}" class="logo d-flex align-items-center">
+        <h1>StandFinecap</h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{% url 'home' %}">Inicio</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="{% url 'Conteudo' %}">Noticias</a></li>
-          <li><a href="#portfolio">Emoções</a></li>
-          <li><a href="#team">Time</a></li>
-          <li><a href="{% url 'VideosPodcasts' %}">Podcasts e Vídeos</a></li>
-          <li><a href="{% url 'cadastrar' %}">Cadastre-se</a></li>
-          <li><a href="{% url 'entrar' %}">Entrar</a></li> 
+          <li><a href="">Inicio</a></li>
+          <li><a href="{% url 'cadastrar' %}">Cadastrar Reserva</a></li>
+          <li><a href="">Noticias</a></li>
+          <li><a href="">Cadastre-se</a></li>
+          <li><a href="">Entrar</a></li> 
         </ul>    
       </nav>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -92,8 +89,8 @@
       <div class="row gy-4">
 
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="PagInicial.html" class="logo d-flex align-items-center">
-            <img src="{% static 'admin/assets/img/IFRN-logo.png' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" style="height: 100%" >
+          <a href="listagem.html" class="logo d-flex align-items-center">
+            <img src="" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" style="height: 100%" >
           </a>
           <p>IFRN - Campus Pau dos Ferros.</p>
           <div class="social-links d-flex mt-4">
@@ -141,10 +138,7 @@
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Copyright <strong><span>FINECAP</span></strong>. All Rights Reserved
       </div>
     </div>
 
@@ -172,10 +166,6 @@
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@ def listagem(request):
     return render(request,"listagem.html", {'reservas': reservas})
 
 #cadastrar
-def cadastrar_reserva(request):
+def cadastrar(request):
     if request.method == 'POST':
         form = ReservaForm(request.POST, request.FILES)
         if form.is_valid():
@@ -16,7 +16,7 @@ def cadastrar_reserva(request):
     else:
         form = ReservaForm()
     
-    return render(request, "form.html", {'form':form})
+    return render(request, "formulario.html", {'form':form})
 
 #detalhar
 def detalhar(request, id):
@@ -35,7 +35,7 @@ def editar(request, id):
     else:
         form = ReservaForm(instance=reserva)
 
-    return render(request,'form.html',{'form':form})
+    return render(request,'formulario.html',{'form':form})
         
 #deletar
 def deletar(request, id):

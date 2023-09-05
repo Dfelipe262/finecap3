@@ -10,7 +10,7 @@ class ReservaForm(ModelForm):
             'cnpj': forms.TextInput(attrs={'class': 'form-control' }),
             'nome_empresa': forms.TextInput(attrs={'class': 'form-control'}),
             'categoria_empresa': forms.TextInput(attrs={'class': 'form-control'}),
+            'stand': forms.Select(attrs={'class': 'form-control'}),
             'imagem': forms.FileInput(attrs={'class': 'form-control'}),
-            'lacalizacao': forms.TextInput(attrs={'class':'form-control'}),
-            'valor': forms.Select(attrs={'class': 'form-control'}), 
+            'quitado': forms.CheckboxInput(attrs={'class': 'form-control'}),
         }

@@ -9,7 +9,7 @@
 /* Colors */
 :root {
   --color-default: #222222;
-  --color-primary: #0B949D;
+  --color-primary: #60017c;
   --color-secondary: #ffffff;
 }
 
@@ -33,7 +33,7 @@ a {
 }
 
 a:hover {
-  color: #0B949D;
+  color: #60017c;
   text-decoration: none;
 }
 
@@ -228,7 +228,7 @@ section {
 # Cabeçalho
 --------------------------------------------------------------*/
 .topbar {
-  background:#0B949D;
+  background:#60017c;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -505,7 +505,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: #0B949D;
+    background: #60017c;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -551,7 +551,7 @@ section {
   .navbar .getstarted:hover,
   .navbar .getstarted:focus:hover {
     color: #fff;
-    background:#0B949D;
+    background:#60017c;
   }
 
   .navbar .dropdown ul,
@@ -633,7 +633,7 @@ section {
 
 .portfolio .portfolio-flters li:hover,
 .portfolio .portfolio-flters li.filter-active {
-  color:#0B949D
+  color:#60017c;
 }
 
 .portfolio .portfolio-flters li:first-child {
@@ -814,7 +814,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #0B949D;
+  background: #60017c;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -846,7 +846,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #0B949D;
+  background: #60017c;
 }
 
 .hero .icon-box:hover .title a,
@@ -914,12 +914,19 @@ section {
 /*--------------------------------------------------------------
 # Rodapé (footer)
 --------------------------------------------------------------*/
+#main {
+  min-height: calc(100vh - 100px); /* 100px é a altura do rodapé, ajuste conforme necessário */
+}
+
 .footer {
   font-size: 14px;
   background-color: var(--color-primary);
   padding: 50px 0;
   color: white;
+  bottom: 0;
+  width: 100%; /* Defina a largura para 100% */
 }
+
 
 .footer .footer-info .logo {
   line-height: 0;
@@ -978,7 +985,7 @@ section {
 
 .footer .footer-links ul i {
   padding-right: 2px;
-  color: #0B949D;
+  color: #60017c;
   font-size: 12px;
   line-height: 0;
 }
