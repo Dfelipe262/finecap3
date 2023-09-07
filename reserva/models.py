@@ -6,15 +6,13 @@ class Stand(models.Model):
     
     def __str__(self):
         return f"Localizacao: {self.localizacao}"
-    
-    def __str__(self):
-        return f"valor: {self.valor}"
+
 
 class Reserva(models.Model):
     cnpj = models.CharField(max_length=100)
     nome_empresa = models.CharField(max_length=100)
     categoria_empresa = models.CharField(max_length=100)
-    quitado = models.BooleanField(default=False)
+    quitado = models.CharField(max_length=3)
     imagem =models.ImageField(default=False)
     stand = models.ForeignKey(Stand, on_delete=models.CASCADE)
    

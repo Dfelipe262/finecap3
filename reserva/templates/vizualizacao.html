@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="card text-center">
+    <div class="card-header">
+      INFORMAÇÕES
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Nome da empresa: {{ reserva.nome_empresa }}</h5>
+      <p class="card-text">Categoria: {{ reserva.categoria_empresa }}</p>
+      <p class="card-text">Cnpj: {{ reserva.cnpj }}</p>
+      <p class="card-text">Localização: {{ reserva.stand.localizacao }}</p>
+      <p class="card-text">Valor: {{ reserva.stand.valor }}</p>
+      <p class="card-text">Quitado: {{ reserva.quitado }} </p>
+
+    </div>
+    <div class="card-footer text-muted">
+        <br>
+    </div>
+</div>
+{% endblock %}

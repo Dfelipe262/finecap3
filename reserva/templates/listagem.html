@@ -40,73 +40,53 @@
 
         <div class="row gy-4 portfolio-container">
 
+          {% for reserva in reservas %}
           <div class="col-xl-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox">
+                {% if reserva.imagem %}
+                <img src="{{ reserva.imagem.url }}" class="img-fluid" alt="">
+                {% endif %}
+              </a>
               <div class="portfolio-info">
-                <h4><a href="" title="More Details">Raiva</a></h4>
-                <p>Descubra o que está por trás da raiva que sentimos</p>
+                <h4><a href="" title="More Details">Nome da empresa: {{ reserva.nome_empresa }}</a></h4>
+                <h4><a href="" title="More Details">Categoria da empresa: {{ reserva.categoria_empresa }} </a></h4>
+                <td>
+                  <a href="{% url 'editar' id=reserva.id %}" class="btn btn-primary btn-sm">Editar</a>
+                  <a href="{% url 'deletar' id=reserva.id %}" class="btn btn-danger btn-sm">Remover</a>
+                  <a href="{% url 'detalhar' id=reserva.id %}" class="btn btn-primary btn-sm" style="background-color: black; border-color: black;">Detalhar</a>
+                </td>
               </div>
             </div>
           </div><!-- End Item -->
+          {% endfor %}
 
-          <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+          <div class="col-xl-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox">
+                <img src="" class="img-fluid" alt="">
+              </a>
               <div class="portfolio-info">
-                <h4><a href="" title="More Details">Alegria</a></h4>
-                <p>Aprenda sobre o melhor dos sentimentos!</p>
-              </div>
-            </div>
-          </div><!-- End Item -->
-
-          <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-            <div class="portfolio-wrap">
-              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="" title="More Details">Medo</a></h4>
-                <p>Porque sentimos medo?</p>
-              </div>
-            </div>
-          </div><!-- End Item -->
-
-          <div class="col-xl-4 col-md-6 portfolio-item filter-varios">
-            <div class="portfolio-wrap">
-              <a href="" class="glightbox"><img src="" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="" title="More Details">Outros sentimentos</a></h4>
-                <p>você sabia que os nossos sentimentos são experiências complexas e subjetivas que envolvem uma combinação de processos cognitivos, emocionais e fisiológicos?
-                  pois é! temos muitos outros. Descubra aqui.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Item -->
-
-          <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-            <div class="portfolio-wrap">
-              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="" title="More Details">Nojo</a></h4>
-                <p>Você sente nojo de algo?</p>
+                <h4><a href="" title="More Details">Nome da empresa: Claro</a></h4>
+                <h4><a href="" title="More Details">Categoria da empresa: Telecomunicações </a></h4>
               </div>
             </div>
           </div><!-- End Item -->
 
           <div class="col-xl-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <a href="" data-gallery="portfolio-gallery-app" class="glightbox"><img src="" class="img-fluid" alt=""></a>
+              <a href="" data-gallery="portfolio-gallery-app" class="glightbox">
+                <img src="" class="img-fluid" alt="">
+              </a>
               <div class="portfolio-info">
-                <h4><a href="" title="More Details">Tristeza</a></h4>
-                <p>infelizmente esse é um sentimento presente em todos nós... descubra mais!</p>
+                <h4><a href="" title="More Details">Nome da empresa: Brisanet</a></h4>
+                <h4><a href="" title="More Details">Categoria da empresa: Telecomunicações </a></h4>
               </div>
             </div>
           </div><!-- End Item -->
 
-          
         </div>
-
       </div>
-
     </div>
   </section><!-- End Section -->
 

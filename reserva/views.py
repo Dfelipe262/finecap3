@@ -12,7 +12,9 @@ def cadastrar(request):
         form = ReservaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            form = ReservaForm()      
+            form = ReservaForm()
+        else:
+            print(form.errors)      
     else:
         form = ReservaForm()
     
@@ -20,8 +22,8 @@ def cadastrar(request):
 
 #detalhar
 def detalhar(request, id):
-    reservas = get_object_or_404(Reserva,id=id)
-    return render(request,'detalhar.html', {'reservas': reservas})
+    reserva = get_object_or_404(Reserva,id=id)
+    return render(request,'vizualizacao.html', {'reserva': reserva})
 
 #editar
 def editar(request, id):
@@ -31,7 +33,7 @@ def editar(request, id):
         form = ReservaForm(request.POST,request.FILES,instance=reserva)
         if form.is_valid():
             form.save()
-            return redirect('listar')
+            return redirect('listagem')
     else:
         form = ReservaForm(instance=reserva)
 
@@ -41,4 +43,4 @@ def editar(request, id):
 def deletar(request, id):
     reserva = get_object_or_404(Reserva, id=id)
     reserva.delete()
-    return redirect('listar')
+    return redirect('listagem')
