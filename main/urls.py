@@ -1,16 +1,17 @@
 from django.contrib import admin
 from django.urls import path
-from reserva.views import listagem, cadastrar, detalhar, editar, deletar
+from reserva.views import ReservaCreateView, ReservaDeleteView, ReservasListView, ReservaUpdateView, ReservaDetailView
 from django.conf.urls.static import static
 from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', listagem, name='listagem'),
-    path('cadastrar/', cadastrar, name='cadastrar'),
-    path('detalhar/<int:id>/', detalhar, name='detalhar'),
-    path('editar/<int:id>/', editar, name='editar'),
-    path('deletar/<int:id>/', deletar, name='deletar'),
+    path('', ReservasListView.as_view(), name='reserva_listar'),
+    path('cadastrar/', ReservaCreateView.as_view(), name='reserva_cadastrar'),
+    path('detalhar/<int:pk>/', ReservaDetailView.as_view(), name='reserva_detalhar'),
+    path('editar/<int:pk>/', ReservaUpdateView.as_view(), name='reserva_editar'),
+    path('deletar/<int:pk>/', ReservaDeleteView.as_view(), name='reserva_deletar'),
       
 ] + static (settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+

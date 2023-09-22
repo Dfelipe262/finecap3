@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="card text-center">
+    <div class="card-header">
+      INFORMAÇÕES
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Nome da empresa: {{ object.nome_empresa }}</h5>
+      <p class="card-text">Categoria: {{ object.categoria_empresa }}</p>
+      <p class="card-text">Cnpj: {{ object.cnpj }}</p>
+      <p class="card-text">Localização: {{ object.stand.localizacao }}</p>
+      <p class="card-text">Valor: {{ object.stand.valor }}</p>
+      <p class="card-text">Quitado: {% if object.quitado %} Sim {% else %} Não {% endif %} </p>
+
+    </div>
+    <div class="card-footer text-muted">
+        <br>
+    </div>
+</div>
+{% endblock %}

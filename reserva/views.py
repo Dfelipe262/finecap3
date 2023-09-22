@@ -1,46 +1,30 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Reserva
+from django.urls import reverse_lazy
+from django.views import generic
+from django.contrib.messages import views
+from reserva.models import Reserva
 from .forms import ReservaForm
 
-def listagem(request):
-    reservas = Reserva.objects.all()
-    return render(request,"listagem.html", {'reservas': reservas})
+# Create your views here.
 
-#cadastrar
-def cadastrar(request):
-    if request.method == 'POST':
-        form = ReservaForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            form = ReservaForm()
-        else:
-            print(form.errors)      
-    else:
-        form = ReservaForm()
-    
-    return render(request, "formulario.html", {'form':form})
+class ReservasListView(generic.ListView):
+  model = Reserva
 
-#detalhar
-def detalhar(request, id):
-    reserva = get_object_or_404(Reserva,id=id)
-    return render(request,'vizualizacao.html', {'reserva': reserva})
+class ReservaDetailView(generic.DetailView):
+  model = Reserva
 
-#editar
-def editar(request, id):
-    reserva = get_object_or_404(Reserva, id=id)
-
-    if request.method =='POST':
-        form = ReservaForm(request.POST,request.FILES,instance=reserva)
-        if form.is_valid():
-            form.save()
-            return redirect('listagem')
-    else:
-        form = ReservaForm(instance=reserva)
-
-    return render(request,'formulario.html',{'form':form})
-        
-#deletar
-def deletar(request, id):
-    reserva = get_object_or_404(Reserva, id=id)
-    reserva.delete()
-    return redirect('listagem')
+class ReservaCreateView(views.SuccessMessageMixin, generic.CreateView):
+  model = Reserva
+  form_class = ReservaForm
+  success_url = reverse_lazy("reserva_listar")
+  success_message = "Reserva cadastrada com sucesso!"
+  
+class ReservaDeleteView(views.SuccessMessageMixin, generic.DeleteView):
+  model = Reserva
+  success_url = reverse_lazy("reserva_listar")
+  success_message = "Reserva removida com sucesso!"
+  
+class ReservaUpdateView(views.SuccessMessageMixin, generic.UpdateView):
+  model = Reserva
+  form_class = ReservaForm
+  success_url = reverse_lazy("reserva_listar")
+  success_message = "Reserva atualizada com sucesso!"
