@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block style %}
 <style>
   .inicio1 {
@@ -8,13 +9,53 @@
     align-items: center;
   }
 
+
   .inicio2 {
     width: 900px;
+  }
+
+
+  .alert {
+    background-color: blueviolet;
+    border-color: blueviolet;
+    color: white;
+  }
+
+
+
+
+  .custom-prev a {
+    background-color: #60017c;
+    color: white;
+  }
+
+
+  .custom-next a {
+    background-color: #60017c;
+    color: white;
+  }
+
+
+  .custom-page a {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+
+  .custom-page a:hover {
+    background-color: #60017c;
+    color: white;
+  }
+
+  .sr-only {
+    color: rgb(255, 255, 255);
   }
 </style>
 {% endblock %}
 
+
 {% block main %}
+
 
 <!-- ======= Seção Inicial ======= -->
 <section id="hero" class="hero">
@@ -22,32 +63,38 @@
     <div class="inicio2">
       <h2>Bem vindo ao cadastro de reservas!</h2>
       <br>
-      <br>
-
       {% if messages %}
-      <ul class="messages">
+      <div class="messages">
         {% for message in messages %}
-        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        <div class="alert alert-primary" role="alert" id="alert">
+          {{message}}
+        </div>
         {% endfor %}
-      </ul>
+      </div>
       {% endif %}
+
 
     </div>
   </div>
 </section>
 
+
 <!-- ======= Seção de reservasa ======= -->
 <section id="portfolio" class="portfolio sections-bg">
   <div class="container" data-aos="fade-up">
+
 
     <div class="section-header">
       <h2>Reservas cadastradas</h2>
     </div>
 
+
     <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
       data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 
+
       <div class="row gy-4 portfolio-container">
+
 
         {% for object in object_list %}
         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
@@ -61,22 +108,65 @@
               <h4><a href="" title="More Details">Nome da empresa: {{ object.nome_empresa }}</a></h4>
               <h4><a href="" title="More Details">Categoria da empresa: {{ object.categoria_empresa }} </a></h4>
               <td>
-                <a href="{% url 'reserva_editar' object.pk %}" class="btn btn-primary btn-sm">Editar</a>
-                <a href="{% url 'reserva_deletar' object.pk %}" class="btn btn-danger btn-sm">Remover</a>
-                <a href="{% url 'reserva_detalhar' object.pk %}" class="btn btn-primary btn-sm"
+                <a href="{% url 'reserva:reserva_editar' object.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                <a href="{% url 'reserva:reserva_deletar' object.pk %}" class="btn btn-danger btn-sm">Remover</a>
+                <a href="{% url 'reserva:reserva_detalhar' object.pk %}" class="btn btn-primary btn-sm"
                   style="background-color: black; border-color: black;">Detalhar</a>
               </td>
             </div>
           </div>
         </div><!-- End Item -->
 
+
         {% empty %}
         <tr>
           <td colspan="4">
             <p>Não existem reservas cadastradas...</p>
+            <br>
+            <br>
           </td>
         </tr>
 
-        {% endfor %}
 
-{% endblock %}
+
+
+        {% endfor %}
+      </div>
+
+
+    </div>
+
+    <div>
+      <nav aria-label="Navegação de página exemplo" style="margin-top: 30px; justify-content: center;">
+        <ul class="pagination">
+          <li class="page-item custom-prev">
+            {% if page_obj.has_previous %}
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Anterior">
+              <span class="sr-only">Anterior</span>
+            </a>
+            {% endif %}
+          </li>
+
+
+          {% for page in page_obj.paginator.page_range %}
+          <li class="page-item custom-page">
+            <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+          </li>
+          {% endfor %}
+
+
+          <li class="page-item custom-next">
+            {% if page_obj.has_next %}
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Próximo">
+              <span class="sr-only">Próximo</span>
+            </a>
+            {% endif %}
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+
+
+    {% endblock %}

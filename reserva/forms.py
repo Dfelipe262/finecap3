@@ -13,3 +13,4 @@ class ReservaForm(ModelForm):
             'stand': forms.Select(attrs={'class': 'form-control'}),
             'imagem': forms.FileInput(attrs={'class': 'form-control'}),
         }
+
