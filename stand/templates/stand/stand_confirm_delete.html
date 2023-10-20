@@ -2,12 +2,12 @@
 
 
 {% block main %}
-<h1>Excluir Reserva</h1>
+<h1>Excluir Stand</h1>
 
 <form method="post">
     <section class="form container-fluid p-5x">
         {% csrf_token %}
-        <p>Você tem certeza que quer deletar a reserva "{{ object }}"?</p>
+        <p>Você tem certeza que quer deletar o stand "{{ object }}"?</p>
         {{ form }}
     </section>
     <button class="br-button primary block mt-3 mt-sm-0 " type="submit">

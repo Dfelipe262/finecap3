@@ -5,6 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include ('reserva.urls', namespace='reserva'))
+    path('', include ('reserva.urls', namespace='reserva')),
+    path('', include ('stand.urls', namespace='stand')),
 ] + static (settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
