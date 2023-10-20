@@ -1,18 +1,72 @@
 {% extends "base.html" %}
 
 
-{% block main %}
-<h1>Excluir Stand</h1>
+{% block style %}
+<style>
+    /* Estilos CSS para a página de exclusão de stand */
+    .deletestandd{
+        padding-top: 30px;
+    }
+    .delete-stand-container {
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 
-<form method="post">
-    <section class="form container-fluid p-5x">
-        {% csrf_token %}
-        <p>Você tem certeza que quer deletar o stand "{{ object }}"?</p>
-        {{ form }}
-    </section>
-    <button class="br-button primary block mt-3 mt-sm-0 " type="submit">
-        <i class="fas fa-check mr-1" aria-hidden="true"></i>
-        Confirmar
-    </button>
-</form>
+    .delete-stand-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .delete-stand-message {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #666;
+    }
+
+    .delete-stand-form {
+        text-align: center;
+    }
+
+    .confirm-button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+</style>
+    
+{% endblock %}
+    
+
+
+{% block main %}
+
+<div class="deletestandd">
+    <div class="delete-stand-container">
+        <h1 class="delete-stand-title">Excluir Stand</h1>
+    
+        <form class="delete-stand-form" method="post">
+            {% csrf_token %}
+            <section class="form container-fluid p-5x">
+                <p>Você tem certeza que quer deletar o stand "{{ object }}"?</p>
+                {{ form }}
+            </section>
+            <button class="confirm-button br-button primary block mt-3 mt-sm-0" type="submit">
+                <i class="fas fa-check mr-1" aria-hidden="true"></i>
+                Confirmar
+            </button>
+        </form>
+    </div>
+</div>
+
 {% endblock %}

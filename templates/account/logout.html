@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock head_title %}
+
+{% block style %}
+<style>
+  /* Estilos CSS embutidos para a página de Sign Out */
+
+  .signoutt{
+    padding-top: 30px;
+  }
+
+  .signout-container {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .signout-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .signout-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+
+  .signout-form {
+    text-align: center;
+    /* Centraliza o botão */
+  }
+
+  .signout-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    /* Centraliza o botão horizontalmente */
+  }
+</style>
+
+{% endblock %}
+
+
+{% block main %}
+
+<div class="signoutt">
+  <div class="signout-container">
+    <h1 class="signout-title">{% trans "Sair" %}</h1>
+
+    <p class="signout-message">{% trans 'Tem certeza que deseja sair?' %}</p>
+
+    <form class="signout-form" method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="signout-button" type="submit">{% trans 'Sair' %}</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
