@@ -7,7 +7,7 @@
 <form method="post">
     <section class="form container-fluid p-5x">
         {% csrf_token %}
-        <p> Você tem certeza que quer deletar a reserva "{{ object }}"?</p>
+        <p>Você tem certeza que quer deletar a reserva "{{ object }}"?</p>
         {{ form }}
     </section>
     <button class="br-button primary block mt-3 mt-sm-0 " type="submit">

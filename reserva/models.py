@@ -15,6 +15,9 @@ class Reserva(models.Model):
     imagem =models.ImageField(default=False)
     stand = models.ForeignKey(Stand, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.nome_empresa}"
+
     
    
 
